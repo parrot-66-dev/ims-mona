@@ -96,7 +96,7 @@
 .end method
 
 .method private constructor <init>(Ljava/util/List;Landroid/content/Context;)V
-    .locals 1
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -142,8 +142,10 @@
     const-string p1, "android.intent.action.BATTERY_CHANGED"
 
     invoke-direct {p0, p1}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
+    
+    const/4 v4, 0x2
 
-    invoke-virtual {p2, v0, p0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
+    invoke-virtual {p2, v0, p0, v4}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
     return-void
 .end method

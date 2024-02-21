@@ -609,7 +609,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;ILorg/codeaurora/ims/ImsSenderRxr;Lorg/codeaurora/ims/ImsSubController;)V
-    .locals 5
+    .locals 6
 
     .line 282
     invoke-direct {p0}, Landroid/telephony/ims/feature/MmTelFeature;-><init>()V
@@ -1054,8 +1054,10 @@
     iget-object v2, p0, Lorg/codeaurora/ims/ImsServiceSub;->mImsServiceStateReceiver:Lorg/codeaurora/ims/ImsServiceStateReceiver;
 
     const/4 v3, 0x2
+    
+    const/4 v5, 0x2
 
-    invoke-virtual {v0, v2, p4, v3}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;I)Landroid/content/Intent;
+    invoke-virtual {v0, v2, p4, v3, v5}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;I)Landroid/content/Intent;
 
     .line 312
     iget-object p4, p0, Lorg/codeaurora/ims/ImsServiceSub;->mImsServiceStateReceiver:Lorg/codeaurora/ims/ImsServiceStateReceiver;
